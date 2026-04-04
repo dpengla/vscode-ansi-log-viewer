@@ -1,0 +1,47 @@
+{
+  "name": "ansi-log-viewer",
+  "displayName": "ANSI Log Viewer",
+  "description": "Convert ANSI-colored logs and JSON-wrapped command output into readable, colorized text in the editor.",
+  "version": "0.0.1",
+  "publisher": "depeng",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onCommand:ansiLogViewer.openPreview",
+    "onCommand:ansiLogViewer.openFilePreview"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ansiLogViewer.openPreview",
+        "title": "ANSI Log Viewer: Process In Place"
+      },
+      {
+        "command": "ansiLogViewer.openFilePreview",
+        "title": "ANSI Log Viewer: Process File In Place..."
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "ansiLogViewer.openFilePreview",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "ansiLogViewer.openPreview",
+          "group": "navigation"
+        }
+      ]
+    }
+  }
+}
