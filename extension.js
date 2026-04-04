@@ -86,6 +86,20 @@ async function processEditorInPlace(editor, decorationCache) {
 
   clearDecorations(editor, decorationCache);
   applyDecorations(editor, output.decorations, startOffset, decorationCache);
+  await setDocumentLanguageToLog(editor.document);
+}
+
+async function setDocumentLanguageToLog(document) {
+  if (document.languageId === "log") {
+    return;
+  }
+
+  const languages = await vscode.languages.getLanguages();
+  if (!languages.includes("log")) {
+    return;
+  }
+
+  await vscode.languages.setTextDocumentLanguage(document, "log");
 }
 
 function fullDocumentRange(document) {
