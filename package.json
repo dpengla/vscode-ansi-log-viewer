@@ -2,6 +2,7 @@
   "name": "ansi-log-viewer",
   "displayName": "ANSI Log Viewer",
   "description": "Convert ANSI-colored logs and JSON-wrapped command output into readable, colorized text in the editor.",
+  "repository": "https://github.com/dpengla/vscode-ansi-log-viewer",
   "version": "0.0.1",
   "publisher": "depeng",
   "license": "MIT",
