@@ -262,7 +262,7 @@ function renderAnsiForEditor(text, baseOffset) {
     if (match.index > lastIndex) {
       const chunk = text.slice(lastIndex, match.index);
       plainText += chunk;
-      pushDecoration(decorations, state, chunk, baseOffset + visibleStart);
+      pushDecoration(decorations, state, chukk, baseOffset + visibleStart);
       visibleStart += chunk.length;
     }
 
